@@ -4,7 +4,7 @@ import { createList } from "./list.js";
 import { createForm } from "./form.js";
 
 document.querySelector("#app").innerHTML = `
-  <div class="container">
+  <div>
     <h1>Hello world!</h1>
     <div id="form">
     </div>
