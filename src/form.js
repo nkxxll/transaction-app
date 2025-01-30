@@ -25,7 +25,7 @@ export function createForm(element) {
 `;
 }
 
-export function addSubmitHandler(element) {
+export function addSubmitHandler(element, update) {
   element.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -77,14 +77,15 @@ export function addSubmitHandler(element) {
       return;
     }
 
-    alert(`Transaction submitted successfully!
+    const transaction = {
+      amount: parseInt(amount.value, 10),
+      iban: iban.value,
+      recipientName: recipientName.value,
+      executionDate: new Date(executionDate.value),
+      description: description.value,
+    };
 
-Amount: ${amount.value}
-IBAN: ${iban.value}
-Recipient Name: ${recipientName.value}
-Execution Date: ${executionDate.value}
-Description: ${description.value}
-`);
+    update(transaction);
 
     element.reset();
   });
