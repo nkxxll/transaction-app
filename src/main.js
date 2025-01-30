@@ -29,6 +29,10 @@ document.querySelector("#app").innerHTML = `
     </form>
     <div id="listAnchor">
     </div>
+    <div id="overlay">
+      <div id="overlay-content">
+      </div>
+    </div>
 `;
 
 const form = document.getElementById("form");
