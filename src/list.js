@@ -1,3 +1,4 @@
+import { showOverlay } from "./details.js";
 /**
  * Creates the transaction list container with a dynamic empty list placeholder.
  * Returns references to the list and placeholder elements.
@@ -64,8 +65,7 @@ export function updateList(listElement, placeholderElement, list) {
 
     // Button to show details (out of scope for now)
     listItem.querySelector(".btn-details").addEventListener("click", () => {
-      // Details functionality will be added later
-      console.log(`Details for transaction ${transaction.amount}`);
+      showOverlay(transaction);
     });
 
     return listItem;
